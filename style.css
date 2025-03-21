@@ -1,4 +1,4 @@
-/*ORANGUTAN MAG, Issue 1. (c)d duan @speculative.hybridity 2025*/
+/*ORANGUTAN MAG (c)d duan @speculative.hybridity 2025*/
 /* global stylesheet */
 
 
@@ -17,7 +17,7 @@
     --font-h1: #000000;
 
     /* WIREFRAMING */
-    --test-border: 1px dotted #757575;
+    --test-border: 0px dotted #757575;
 
     /* BASE FONT SIZE */
     font-size: 16px;
