@@ -1,0 +1,225 @@
+/*ORANGUTAN MAG, Issue 1. (c)d duan @speculative.hybridity 2025*/
+/* styling for home.html */
+
+a {
+    text-decoration: underline;
+}
+
+/*                                                      BACKGROUND*/
+.home-page {
+    z-index: -1;
+    background-image: url('imgs/home_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.home-page::before {    /* orange tint overlay */
+    z-index: 0; 
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--orange-tint);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/*                                                      BANNER*/
+banner {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: 0.6em;
+    text-align: center;
+    padding: 1em;
+    box-sizing: border-box; /* ensure that padding is included in size calculation */
+    color: var(--white);
+    background-color: var(--paleblue);
+    display: flex;  /* flex boxing to centre text. */
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    display: inline; /* make sure that when text wrapped due to small screen, there is no line break. */
+}
+/*                                                      CONTENT OVERLAY*/
+.content-overlay {   /* background colour */
+    z-index: 1;
+    position: fixed;
+    width: 55%;
+    min-width: 500px;
+    max-width: 690px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-overlay > .grid-container {
+    display: grid;
+    width: 100%; /* Fill parent width */
+    height: 100%; /* Fill parent height */
+    background-color: var(--sheer-grey);
+    border-radius: 10px;
+    
+    grid-template-rows: 88px auto 1fr auto;
+    padding: 5px;
+    gap: 0px;
+    box-sizing: border-box; /* ensures padding doesn’t add extra size beyond defined overlay size */
+}
+/*.grid-container > div {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    overflow: auto; 
+    overflow: auto;
+}*/
+/*                                                      HEADER*/
+.grid-container > header {
+    border: var(--test-border);
+    grid-row: 1;
+    margin: auto;   /*horizontal and vertical centre*/
+    font-size: 1.5em;
+}
+/*                                                      SUBHEADER*/
+.grid-container > subheader {
+    grid-row: 2;
+    text-align: left;
+    font-size: 0.5em;
+    color: var(--dark-grey);
+    margin-top: 20px;
+    display: flex;
+}
+.grid-container > subheader > div:nth-of-type(1) {
+    flex: 1;    /* negative space on left */
+}
+.grid-container > subheader > div {
+    flex: 8 ;
+    border: var(--test-border);
+}
+/*                                                      CONTENT*/
+.grid-container > content {
+    grid-row: 3;
+    text-align: left;
+    font-size: .8em;
+    margin-top: -0.6em;
+    line-height: 2.6em;
+    display: flex;
+}
+.grid-container > content > div:nth-of-type(1) {
+    flex: 2;    /* negative space on left */
+}
+.grid-container > content > div:nth-of-type(4) {
+    flex: 1;    /* negative space on right */
+}
+.grid-container > content > div {
+    flex: 3 auto;
+    border: var(--test-border);
+}
+/*                                                      SEARCH BAR*/
+.grid-container > ad-search {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--white);
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+}
+.grid-container > ad-search > label {
+    font-size: 0.4em;
+    padding-left: 40px;
+    padding-right: 12px;
+    margin: auto;
+}
+.grid-container > ad-search > input {
+    font-size: 0.4em;
+}
+.grid-container > ad-search > button {
+    font-size: 0.4em;
+    margin-left: 12px;
+    margin-right: 50px;
+}
+/*                                                      FOOTER*/
+footer {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-size: 0.6em;
+    text-align: center;
+    padding: 1em;
+    box-sizing: border-box; /* ensure that padding is included in size calculation */
+    color: var(--white);
+    display: flex;  /* flex boxing to centre text. */
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    display: inline; /* make sure that when text wrapped due to small screen, there is no line break. */
+}
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    body {
+/*                                                      BACKGROUND*/        
+    }
+    .homepage {
+        background-size: cover; /* or contain? */
+    }
+/*                                                      HEADER*/
+    .content-overlay {
+        width: 70%; 
+        height: 70%;
+        min-width: 330px; /* remove min-width for smaller screens */
+        max-width: unset; /* remove max-width for flexibility */
+    }
+    .content-overlay > .grid-container {
+        grid-template-rows: auto auto 1fr auto; /*  rows for stacking */
+    }
+/*                                                      SUBHEADER*/
+    .grid-container > subheader {
+        text-align: center;
+        justify-content: center;
+    }
+    .grid-container > subheader > div:nth-of-type(1) {
+        flex: 0;
+    }
+/*                                                      CONTENT*/
+    .grid-container > content {
+        flex-direction: column; /* stack  */
+        align-items: center;
+        margin-top: -0.5em;
+    }
+    .grid-container > content > div:nth-of-type(1),
+    .grid-container > content > div:nth-of-type(4) {
+        flex: 0; /* no negative space on mobile */
+    }
+    .grid-container > content > div {
+        flex: unset; 
+        width: 100%;
+        text-align: center;
+/*                                                      SEARCH BAR*/
+    }.grid-container > ad-search > label {
+        font-size: 0.4em;
+        padding-left: 40px;
+        padding-right: 12px;
+        margin: auto;
+    }
+    .grid-container > ad-search > input {
+        font-size: 0.4em;
+    }
+    .grid-container > ad-search > button {
+        font-size: 0.4em;
+        margin-left: 12px;
+        margin-right: 50px;
+}
+/*                                                      FOOTER*/
