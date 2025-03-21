@@ -23,16 +23,10 @@
     font-size: 16px;
 }
 
+/* all mentions of ORANGUTAN */
 oran {
     color: var(--orange)
 }
-
-
-/* smooth scrolling for section hrefs*/
-html {
-    scroll-behavior: smooth;
-}
-
 
 body {
     background-color: var(--white);
@@ -48,8 +42,6 @@ h1 {
 }
 
 p {
-    font-size: 18px;
-    text-align: center;
 }
 
 nav {
@@ -72,10 +64,6 @@ a:hover {
 }
 */
 
-section {
-    padding: 50px 20px;
-    min-height: 30vh; /* Full screen height for each */
-}
 
 
 @media only screen and (max-width: 768px) {

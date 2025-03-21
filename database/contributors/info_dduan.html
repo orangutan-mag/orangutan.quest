@@ -1,6 +1,3 @@
-<!--- ORANGUTAN MAG, Issue 1. (c)d duan @speculative.hybridity 2025 -->
-<!--- About page -->
-
 <!DOCTYPE html>
 <html>
 <!-- defining meta info -->
@@ -15,22 +12,24 @@
 
 
 <body>
-    <div class="about-container">
-        <p>About page placeholder</p>
-        <p>@orangutan.mag7</p>
-        <p>
+    <div class="database-container">
+        <p id="name">d duan</p>
+        <p id="handle">@speculative.hybridity</p>
+        <spanp>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Proin tortor purus platea sit eu id nisi litora libero. Neque vulputate consequat ac amet augue blandit maximus aliquet congue. 
             Pharetra vestibulum posuere ornare faucibus fusce dictumst orci aenean 
             eu facilisis ut volutpat commodo senectus purus himenaeos fames primis convallis nisi.
-        </p>
+        </span>
 
     </div>
-
-    <!-- load nav.html here -->
-    <div id="nav-loader"></div>
-    <script src="nav-loader.js"></script>
 </body>
+
+
+<!-- load nav.html here -->
+<div id="nav-loader"></div>
+<script src="/nav-loader.js"></script>
+
 </html>
 
 
@@ -42,9 +41,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    }
 
-.about-container {
+    p {
+        line-height: 0.3ch;
+    }
+
+    .database-container {
     width: 75vw;             
     height: auto;            
     padding: 20px;           
@@ -53,6 +56,14 @@
     background-color: #fff;
     border-radius: 5ch;
     box-shadow: 0 0 10ch var(--orange);
-}
+    }
+
+    #name {
+        text-align: center;
+    }
+    #handle {
+        text-align: center;
+        font-style: oblique;
+    }
 
 </style>

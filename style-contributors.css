@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80vw;
+    min-height: 50vh;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+}
+
+/* Grid styling */
+.headshot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Individual headshot wrapper */
+.headshot-item {
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.headshot-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Name overlay */
+.headshot-item::after {
+    content: attr(data-name);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--orange);
+    padding: 5px 10px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+}
+
+/* Hover effects */
+.headshot-grid:hover .headshot-item {
+    opacity: 0.5;
+}
+
+.headshot-item:hover {
+    opacity: 1 !important;
+}
+
+.headshot-item:hover::after {
+    opacity: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .headshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

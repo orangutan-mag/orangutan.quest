@@ -76,7 +76,7 @@ banner {
     border: var(--test-border);
     grid-row: 1;
     margin: auto;   /*horizontal and vertical centre*/
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 /*                                                      SUBHEADER*/
 .grid-container > subheader {
