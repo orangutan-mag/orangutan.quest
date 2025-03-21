@@ -8,7 +8,7 @@ a {
 /*                                                      BACKGROUND*/
 .home-page {
     z-index: -1;
-    background-image: url('imgs/home_bg.jpg');
+    background-image: url('imgs/home_bg2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -30,7 +30,7 @@ banner {
     width: 100%;
     left: 0;
     top: 0;
-    font-size: 0.6em;
+    font-size: 0.75rem;
     text-align: center;
     padding: 1em;
     box-sizing: border-box; /* ensure that padding is included in size calculation */
@@ -79,7 +79,7 @@ banner {
     border: var(--test-border);
     grid-row: 1;
     margin: auto;   /*horizontal and vertical centre*/
-    font-size: 1.5em;
+    font-size: 2rem;
 }
 /*                                                      SUBHEADER*/
 .grid-container > subheader {
@@ -151,7 +151,7 @@ footer {
     width: 100%;
     left: 0;
     bottom: 0;
-    font-size: 0.6em;
+    font-size: 0.8rem;
     text-align: center;
     padding: 1em;
     box-sizing: border-box; /* ensure that padding is included in size calculation */
@@ -175,18 +175,23 @@ footer {
     .homepage {
         background-size: cover; /* or contain? */
     }
-/*                                                      HEADER*/
+/*                                                      CONTENT OVERLAY*/
     .content-overlay {
-        width: 70%; 
-        height: 70%;
+        width: 80%; 
         min-width: 330px; /* remove min-width for smaller screens */
-        max-width: unset; /* remove max-width for flexibility */
+        max-width: unset; /* remove max for flexibility */
+        max-height: unset;
     }
     .content-overlay > .grid-container {
         grid-template-rows: auto auto 1fr auto; /*  rows for stacking */
+    }                             
+    /*                                                  HEADER*/
+    .grid-container > header {
+        font-size: 6cqi;
     }
 /*                                                      SUBHEADER*/
     .grid-container > subheader {
+        font-size: 2cqi;
         text-align: center;
         justify-content: center;
     }
@@ -221,5 +226,10 @@ footer {
         font-size: 0.4em;
         margin-left: 12px;
         margin-right: 50px;
-}
+    }
+
+    #col2 {
+        display: none;
+    }
+
 /*                                                      FOOTER*/
