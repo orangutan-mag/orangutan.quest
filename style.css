@@ -38,7 +38,6 @@ body {
 /**/
 h1 {
     color: var(--font-h1);
-    text-align: center;
 }
 
 p {
