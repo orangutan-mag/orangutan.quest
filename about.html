@@ -16,8 +16,8 @@
 
 <body>
     <div class="about-container">
-        <p>About page placeholder</p>
-        <p>@orangutan.mag7</p>
+        <p id="name">About page placeholder</p>
+        <p id="handle">@orangutan.mag7</p>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Proin tortor purus platea sit eu id nisi litora libero. Neque vulputate consequat ac amet augue blandit maximus aliquet congue. 
@@ -36,22 +36,38 @@
 
 <style>
     body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
 
-.about-container {
-    width: 75vw;             
-    height: auto;            
-    padding: 20px;           
-    box-sizing: border-box;  
-    border: 1px solid black; 
-    background-color: #fff;
-    border-radius: 5ch;
-    box-shadow: 0 0 10ch var(--orange);
-}
+    p {
+        margin-left: 3ch;
+        margin-right: 3ch;
+        line-height: 2.3ch;
+    }
+
+    .about-container {
+        width: 75vw;             
+        height: auto;            
+        padding: 20px;           
+        box-sizing: border-box;  
+        border: 1px solid black; 
+        background-color: #fff;
+        border-radius: 5ch;
+        box-shadow: 0 0 10ch var(--orange);
+    }
+
+    #name {
+        text-align: center;
+    }
+    #handle {
+        text-align: center;
+        font-style: oblique;
+    }
+</style>
 
 </style>
