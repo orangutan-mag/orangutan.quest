@@ -149,56 +149,53 @@
             const viewportWidth = window.innerWidth; // Get the viewport width
             const imageWidth = 400; // Fixed width of the images
             const maxLeft = viewportWidth - imageWidth; // Maximum allowable left position
-    
+
             // Array of desired left percentages for each image
             const leftPercentages = [5, 60, 15, 45, 20, 50, 15, 50, 5, 45];
-    
+
             imageContainers.forEach((container, index) => {
+                // Set the top position for the current image
                 container.style.top = `${currentTop}px`;
+
+                // Calculate the desired left position in pixels based on the percentage
                 let desiredLeft = (leftPercentages[index] / 100) * viewportWidth;
-                if (desiredLeft > maxLeft) desiredLeft = maxLeft;
-                if (desiredLeft < 0) desiredLeft = 0;
+
+                // Ensure the image doesn't go beyond the right edge of the viewport
+                if (desiredLeft > maxLeft) {
+                    desiredLeft = maxLeft;
+                }
+                // Ensure the image doesn't go beyond the left edge (minimum 0)
+                if (desiredLeft < 0) {
+                    desiredLeft = 0;
+                }
+
+                // Set the left position in pixels
                 container.style.left = `${desiredLeft}px`;
+
+                // Get the height of the current image
                 const img = container.querySelector('img');
                 const imgHeight = img.offsetHeight;
+
+                // Update the top position for the next image
                 currentTop += imgHeight + gap;
             });
-    
+
+            // Set the height of the image-wrapper to ensure the page is scrollable
             const imageWrapper = document.querySelector('.image-wrapper');
-            imageWrapper.style.height = `${currentTop + 100}px`;
+            imageWrapper.style.height = `${currentTop + 100}px`; // Add extra space at the bottom
         }
-    
-        // Function to check if the device is mobile
-        function isMobileDevice() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-        }
-    
-        // Toggle text visibility on click for mobile
-        function setupMobileToggle() {
-            if (isMobileDevice()) {
-                const imageContainers = document.querySelectorAll('.image-container');
-                imageContainers.forEach(container => {
-                    container.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        this.classList.toggle('active');
-                    });
-                });
-            }
-        }
-    
-        // Run positioning and mobile setup after images load
-        window.onload = function() {
-            positionImages();
-            setupMobileToggle();
-        };
-    
-        // Re-run positioning if the window is resized
+
+        // Run the positioning function after all images are loaded
+        window.onload = positionImages;
+
+        // Re-run the positioning function if the window is resized
         window.onresize = positionImages;
     </script>
 </body>
 
 
 <style>
+
     .image-container {
         position: absolute;
         z-index: 1;
@@ -230,7 +227,6 @@
         overflow-y: auto;
     }
 
-    /* Hover effect for desktop */
     .image-container:hover img {
         opacity: 0;
     }
@@ -239,27 +235,10 @@
         opacity: 1;
     }
 
-    /* Active class for mobile toggle */
-    .image-container.active img {
-        opacity: 0;
-    }
-
-    .image-container.active .hover-text {
-        opacity: 1;
-    }
-
     .image-wrapper {
         position: relative;
         width: 100%;
         height: auto;
-    }
-
-    /* Optional: Adjust image size for smaller screens */
-    @media (max-width: 768px) {
-        .image-container img {
-            width: 100%;
-            max-width: 400px;
-        }
     }
 </style>
 
