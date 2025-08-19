@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<!-- defining meta info -->
+<head>
+    <title>Myfanwy Hocking</title>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+    <div class="database-container">
+        <p id="name">Myfanwy Hocking =
+        <p id="handle">@myfgendered</p>
+
+        <p>
+            Myfanwy Hocking is an actor, playwright, poet, and teacher, living and working in Narrm. They are most interested in queer, feminist theatre that seeks to rail against the patriarchy and capitalism.  
+<br><br>
+As a performer, they have worked at the Melbourne Theatre Company, Theatre Works, Butterfly Club, Antipodes Theatre Company, and NORPA Lismore. Their play ‘HOW TO BE A PERSON WHEN THE WORLD IS ENDING’ debuted at the Edinburgh Festival Fringe in 2022, and their newest play ‘Storked’ debuted in May this year at Theatre Works. They are currently touring ‘Trophy Boys’ around the country. They are also a passionate voice artist, having narrated over 15 audio books.
+<br><br>
+Myfanwy is a double graduate of the VCA, attaining their BFA in Acting, and their Master’s in Writing for Theatre. From this institution, they were awarded the George Fairfax Memorial Award (2022) and the Keith and Elisabeth Murdoch Travelling Scholarship (2023), both for excellence in their craft.
+<br><br>
+
+Myfanwy adores all things art and all things queer, and they are seeking to queer the theatrical climate in Narrm through all their work.
+        </p>
+
+    </div>
+</body>
+
+
+<!-- load navHome.html here -->
+<div id="navPrevious-loader">111</div>
+<script src="/navPrevious-loader.js"></script>
+
+</html>
+
+
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+
+    p {
+        margin-left: 3ch;
+        margin-right: 3ch;
+        line-height: 2.3ch;
+    }
+
+    .database-container {
+        width: 75vw;             
+        height: auto;            
+        padding: 20px;           
+        box-sizing: border-box;  
+        border: 1px solid black; 
+        background-color: #fff;
+        border-radius: 5ch;
+        box-shadow: 0 0 10ch var(--orange);
+    }
+
+    #name {
+        text-align: center;
+    }
+    #handle {
+        text-align: center;
+        font-style: oblique;
+    }
+
+</style>
